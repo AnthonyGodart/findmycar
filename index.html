@@ -16,8 +16,19 @@
                 const latitude = position.coords.latitude;
                 const longitude = position.coords.longitude;
 
-                // Sélectionner l'application de cartographie (ici Google Maps comme exemple)
-                const selectedMapApp = 'google';
+                // Détecter le type de navigateur mobile
+                const userAgent = navigator.userAgent.toLowerCase();
+
+                // Sélectionner l'application de cartographie en fonction du navigateur
+                let selectedMapApp;
+                if (userAgent.indexOf('safari') !== -1 && userAgent.indexOf('mobile') !== -1) {
+                    selectedMapApp = 'apple'; // Safari mobile (iPhone/iPad)
+                } else if (userAgent.indexOf('chrome') !== -1 && userAgent.indexOf('mobile') !== -1) {
+                    selectedMapApp = 'google'; // Chrome mobile (Android)
+                } else {
+                    // Si le navigateur n'est ni Safari mobile ni Chrome mobile, utilisez une application par défaut
+                    selectedMapApp = 'google';
+                }
 
                 // Construire l'URL en fonction de l'application de cartographie
                 let mapURL;
