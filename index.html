@@ -41,7 +41,7 @@
                 const longitude = position.coords.longitude;
                 const accuracy = position.coords.accuracy;
                 console.log('Précision de la géolocalisation :', accuracy, 'mètres');
-                alert('Précision de la géolocalisation :', accuracy, 'mètres')
+                alert(`Précision de la géolocalisation : ${accuracy} mètres`);
 
                 // Détecter le type de navigateur mobile
                 const userAgent = navigator.userAgent.toLowerCase();
