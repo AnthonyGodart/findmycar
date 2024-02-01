@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="style.css">
     <title>Park My Car</title>
 </head>
@@ -12,7 +13,30 @@
     <script>
         function openMap() {
             // Récupérer les coordonnées GPS
-            navigator.geolocation.getCurrentPosition(function(position) {
+            navigator.geolocation.getCurrentPosition(
+                successCallback,
+                errorCallback,
+                { enableHighAccuracy: true }
+            );
+
+            function errorCallback(error) {
+                switch(error.code) {
+                    case error.PERMISSION_DENIED:
+                        console.error("L'utilisateur a refusé la demande de géolocalisation.");
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        console.error("L'information de localisation n'est pas disponible.");
+                        break;
+                    case error.TIMEOUT:
+                        console.error("La demande de géolocalisation a expiré.");
+                        break;
+                    case error.UNKNOWN_ERROR:
+                        console.error("Une erreur inconnue s'est produite.");
+                        break;
+                }
+            }
+
+            function successCallback(position) {
                 const latitude = position.coords.latitude;
                 const longitude = position.coords.longitude;
 
@@ -46,10 +70,10 @@
                     default:
                         break;
                 }
-
+                
                 // Ouvrir l'application de cartographie dans une nouvelle fenêtre/onglet
                 window.open(mapURL, '_blank');
-            });
+            };
         }
     </script>
 </body>
