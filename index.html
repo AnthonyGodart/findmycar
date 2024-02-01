@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Park My Car</title>
+</head>
+<body>
+    <button onclick="openMap()">Parked My Car Here</button>
+
+    <script>
+        function openMap() {
+            // Récupérer les coordonnées GPS
+            navigator.geolocation.getCurrentPosition(function(position) {
+                const latitude = position.coords.latitude;
+                const longitude = position.coords.longitude;
+
+                // Sélectionner l'application de cartographie (ici Google Maps comme exemple)
+                const selectedMapApp = 'google';
+
+                // Construire l'URL en fonction de l'application de cartographie
+                let mapURL;
+                switch (selectedMapApp) {
+                    case 'google':
+                        mapURL = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
+                        break;
+                    case 'apple':
+                        mapURL = `https://maps.apple.com/?ll=${latitude},${longitude}`;
+                        break;
+                    case 'waze':
+                        mapURL = `https://www.waze.com/ul?ll=${latitude},${longitude}`;
+                        break;
+                    // Ajoutez d'autres cas au besoin
+                    default:
+                        break;
+                }
+
+                // Ouvrir l'application de cartographie dans une nouvelle fenêtre/onglet
+                window.open(mapURL, '_blank');
+            });
+        }
+    </script>
+</body>
+</html>
