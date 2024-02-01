@@ -10,6 +10,9 @@
 <body>
     <img src="logo.png" alt="Logo" onclick="openMap()" style="cursor: pointer;">
 
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=openMap" 
+    async defer></script> -->
+
     <script>
         function openMap() {
             // Récupérer les coordonnées GPS
@@ -37,11 +40,24 @@
             }
 
             function successCallback(position) {
-                const latitude = position.coords.latitude;
-                const longitude = position.coords.longitude;
+                const lat = position.coords.latitude;
+                const lng = position.coords.longitude;
                 const accuracy = position.coords.accuracy;
-                console.log('Précision de la géolocalisation :', accuracy, 'mètres');
-                alert(`Précision de la géolocalisation : ${accuracy} mètres`);
+                console.log('Latitude : ', lat);
+                console.log('Longitude : ', lng);
+                console.log('Précision de la géolocalisation : ', accuracy, 'mètres');
+                alert(`Informations de localisation : \nLatitude : ${lat} \nLongitude : ${lng} \nPrécision : ${accuracy} mètres`);
+
+                // const myPosition = new google.maps.LatLng(lat, lng);
+                // const mapOptions = {
+                //     zoom: 15,
+                //     center: myPosition
+                // };
+                // const myMap = new google.maps.Map(document.getElementById("map"), mapOptions);
+                // const myMarker = new google.maps.Marker({
+                //     position: myPosition,
+                //     title: 'My car is here !'
+                // });
 
                 // Détecter le type de navigateur mobile
                 const userAgent = navigator.userAgent.toLowerCase();
@@ -61,13 +77,14 @@
                 let mapURL;
                 switch (selectedMapApp) {
                     case 'google':
-                        mapURL = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
+                        mapURL = `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
+                        //myMarker.setMap(myMap);
                         break;
                     case 'apple':
-                        mapURL = `https://maps.apple.com/?ll=${latitude},${longitude}`;
+                        mapURL = `https://maps.apple.com/?ll=${lat},${lng}`;
                         break;
                     case 'waze':
-                        mapURL = `https://www.waze.com/ul?ll=${latitude},${longitude}`;
+                        mapURL = `https://www.waze.com/ul?ll=${lat},${lng}`;
                         break;
                     // Ajoutez d'autres cas au besoin
                     default:
