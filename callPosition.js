@@ -8,10 +8,10 @@ function openMap() {
 
         // Sélectionner l'application de cartographie en fonction du navigateur
         let selectedMapApp;
-        if (userAgent.indexOf('safari') !== -1 && userAgent.indexOf('mobile') !== -1) {
-            selectedMapApp = 'apple'; // Safari mobile (iPhone/iPad)
-        } else if (userAgent.indexOf('chrome') !== -1 && userAgent.indexOf('mobile') !== -1) {
-            selectedMapApp = 'google'; // Chrome mobile (Android)
+        if (userAgent.indexOf('chrome') !== -1 && userAgent.indexOf('mobile') !== -1) {
+            selectedMapApp = 'google'; // Safari mobile (iPhone/iPad)
+        } else if (userAgent.indexOf('safari') !== -1 && userAgent.indexOf('mobile') !== -1) {
+            selectedMapApp = 'apple'; // Chrome mobile (Android)
         } else {
             // Si le navigateur n'est ni Safari mobile ni Chrome mobile, utilisez une application par défaut
             selectedMapApp = 'google';
@@ -20,7 +20,7 @@ function openMap() {
         // Construire l'URL en fonction de l'application de cartographie
         let mapURL;
         switch (selectedMapApp) {
-            case 'appleee':
+            case 'apple':
                 mapURL = `https://maps.apple.com/?ll=${lat},${lng}`;
                 break;
             case 'waze':
