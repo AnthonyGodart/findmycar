@@ -1,5 +1,5 @@
 function storePosition() {
-    // Récupérer les coordonnées GPS
+
     navigator.geolocation.getCurrentPosition(
         successCallback,
         errorCallback,
@@ -24,9 +24,9 @@ function storePosition() {
     }
 
     function successCallback(position) {
-        const writePosition = confirm('Attention, cette action va écraser la position déjà enregistrée. Voulez-vous continuer ?');
+        const allowWritePosition = confirm('Attention ! Cette action va écraser la position déjà enregistrée. Voulez-vous continuer ?');
 
-        if (!writePosition) {
+        if (!allowWritePosition) {
             return;
         }
         const lat = position.coords.latitude;
@@ -36,7 +36,5 @@ function storePosition() {
 
         positionToStore.setItem('lat', lat);
         positionToStore.setItem('lng', lng);
-
-        alert('Votre position a bien été enregistrée !')
     }
 }
