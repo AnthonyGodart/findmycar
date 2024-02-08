@@ -20,11 +20,7 @@ function openMap() {
         // Construire l'URL en fonction de l'application de cartographie
         let mapURL;
         switch (selectedMapApp) {
-            case 'google':
-                mapURL = `https://map.google.com/maps?q=${lat},${lng}`;
-                //myMarker.setMap(myMap);
-                break;
-            case 'apple':
+            case 'appleee':
                 mapURL = `https://maps.apple.com/?ll=${lat},${lng}`;
                 break;
             case 'waze':
@@ -32,6 +28,7 @@ function openMap() {
                 break;
             // Ajoutez d'autres cas au besoin
             default:
+                mapURL = `https://map.google.com/maps?q=${lat},${lng}`;
                 break;
         }
 
