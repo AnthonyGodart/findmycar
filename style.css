@@ -7,10 +7,18 @@ body {
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: column;
+    gap: 10vh;
     align-items: center;
     justify-content: center;
 }
 
 img {
     max-width: 20vw;
+}
+figure {
+    text-align: center;
+}
+figcaption {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
