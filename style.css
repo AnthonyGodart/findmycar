@@ -43,7 +43,7 @@ figure {
     padding: 20px;
 }
 
-.copyright{
+#copyright{
     position: fixed;
     width: 100vw;
     bottom: 0;
