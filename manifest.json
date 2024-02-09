@@ -1,0 +1,23 @@
+{
+    "name": "Park my Car",
+    "short_name": "Park my Car",
+    "description": "L'application qui vous permet, en 3 clics, d'enregistrer et retrouver l'endroit où vous avez stationné votre voiture !",
+    "dir": "ltr",
+    "start_url": "/findmycar/?utm_source=web_app_manifest",
+    "display": "fullscreen",
+    "background_color": "white",
+    "icons": [
+        {
+          "src": "logo.ico",
+          "sizes": "48x48 72x72 96x96 144x144 168x168 192x192 256x256",
+          "type": "image/ico"
+        }
+    ]
+    ,
+    "scope": "/findmycar/",
+    "related_applications": [
+      {
+        "platform": "web"
+      }
+    ]
+}
