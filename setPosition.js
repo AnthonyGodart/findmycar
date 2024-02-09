@@ -37,4 +37,4 @@ function storePosition() {
         positionToStore.setItem('lat', lat);
         positionToStore.setItem('lng', lng);
     }
-}
+};
