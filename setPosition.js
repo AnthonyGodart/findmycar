@@ -24,7 +24,7 @@ function storePosition() {
     }
 
     function successCallback(position) {
-        const allowWritePosition = confirm('Attention ! Cette action va écraser la position déjà enregistrée. Voulez-vous continuer ?');
+        const allowWritePosition = confirm('Voulez-vous enregistrer cet emplacement ?');
 
         if (!allowWritePosition) {
             return;
@@ -36,5 +36,9 @@ function storePosition() {
 
         positionToStore.setItem('lat', lat);
         positionToStore.setItem('lng', lng);
+
+        alert('Position enregistrée avec succès');
+
+        displayButtons();
     }
 };

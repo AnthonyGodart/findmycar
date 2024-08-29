@@ -1,6 +1,6 @@
 {
-    "name": "Park my Car",
-    "short_name": "Park my Car",
+    "name": "Find my Car",
+    "short_name": "Find my Car",
     "description": "L'application qui vous permet, en 3 clics, d'enregistrer et retrouver l'endroit où vous avez stationné votre voiture !",
     "dir": "ltr",
     "start_url": "/findmycar/?utm_source=web_app_manifest",
