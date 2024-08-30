@@ -32,12 +32,8 @@ function storePosition() {
         const lat = position.coords.latitude;
         const lng = position.coords.longitude;
 
-        const positionToStore = localStorage;
-
         positionToStore.setItem('lat', lat);
         positionToStore.setItem('lng', lng);
-
-        alert('Position enregistrée avec succès');
 
         displayButtons();
     }

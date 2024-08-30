@@ -20,5 +20,4 @@ function displayButtons() {
         findButton.style.display = 'none'; // Masquer le bouton "Retrouver"
         deleteButton.style.display = 'none'; // Masquer le bouton "Effacer"
     }
-}
-
+};
