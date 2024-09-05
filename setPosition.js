@@ -24,16 +24,13 @@ function storePosition() {
     }
 
     function successCallback(position) {
-        const allowWritePosition = confirm('Voulez-vous enregistrer cet emplacement ?');
-
-        if (!allowWritePosition) {
-            return;
-        }
         const lat = position.coords.latitude;
         const lng = position.coords.longitude;
 
-        positionToStore.setItem('lat', lat);
-        positionToStore.setItem('lng', lng);
+        localStorage.setItem('lat', lat);
+        localStorage.setItem('lng', lng);
+
+        alert('La position a bien été enregistrée !');
 
         displayButtons();
     }
