@@ -1,4 +1,4 @@
-const CACHE_NAME = 'FindMyCar-V2';
+const CACHE_NAME = 'FindMyCar-V2.1';
 const urlsToCache = [
     '/',
     '/index.html',
