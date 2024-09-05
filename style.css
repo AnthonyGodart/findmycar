@@ -1,5 +1,6 @@
 * {
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -8,6 +9,7 @@ body {
     height: 100vh;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
 .background {
     position: fixed;
     top: 0;
@@ -17,10 +19,12 @@ body {
     z-index: -1;
     object-fit: cover;
 }
+
 h1 {
     text-align: center;
-    padding: 20vw;
+    padding: 20px;
 }
+
 .main {
     position: relative;
     display: flex;
@@ -32,9 +36,11 @@ h1 {
     align-items: center;
     justify-content: center;
 }
-.pin{
+
+.pin {
     max-width: 20vw;
 }
+
 figure {
     text-align: center;
     border: 1px solid darkgray;
@@ -47,7 +53,7 @@ figure {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #6200EE;
+    background-color: #008fee;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -57,7 +63,15 @@ figure {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-#copyright{
+#installButton:hover {
+    background-color: #005bb5;
+}
+
+#installButton:focus {
+    outline: 2px solid #fff;
+}
+
+#copyright {
     position: fixed;
     width: 100vw;
     bottom: 0;
