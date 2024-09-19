@@ -4,7 +4,7 @@
     "description": "L'application qui vous permet, en 3 clics, d'enregistrer et retrouver l'endroit où vous avez stationné votre voiture !",
     "dir": "ltr",
     "start_url": "/findmycar/?utm_source=web_app_manifest",
-    "display": "standalone",
+    "display": "browser",
     "orientation": "portrait",
     "background_color": "white",
     "theme_color": "white",
